@@ -1,0 +1,22 @@
+{
+  "cmake.configureOnOpen": true,
+  "cmake.generator": "Ninja",
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+
+  "clangd.arguments": ["--compile-commands-dir=build/debug"],
+  "C_Cpp.intelliSenseEngine": "disabled",
+
+  "editor.inlayHints.enabled": "off",
+
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  }
+}

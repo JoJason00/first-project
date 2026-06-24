@@ -1,0 +1,44 @@
+# CMake build directories
+build/
+out/
+cmake-build-*/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+Testing/
+
+# Compile database
+compile_commands.json
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
+
+# Binaries
+*.exe
+*.dll
+*.lib
+*.a
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# Coverage files
+*.gcda
+*.gcno
+*.gcov
+coverage.html
+coverage/
+coverage-*/
+
+# Editor / OS temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
