@@ -56,7 +56,7 @@ if(BUILD_TESTING)
     add_subdirectory(third_party/Catch2)
 
     add_executable(test_add
-        test/test_add.cpp
+        tests/test_add.cpp
     )
 
     target_link_libraries(test_add PRIVATE
@@ -67,10 +67,19 @@ if(BUILD_TESTING)
     add_test(NAME test_add COMMAND test_add)
 endif()
 
+add_executable(profile_app
+    src/main.cpp
+)
+
+target_link_libraries(profile_app PRIVATE
+    add
+)
+
 
 if(MSVC)
     target_compile_options(app PRIVATE /W4 /permissive-)
     target_compile_options(add PRIVATE /W4 /permissive-)
+    target_compile_options(profile_app PRIVATE /W4 /permissive-)
 
     if(BUILD_TESTING)
         target_compile_options(test_add PRIVATE /W4 /permissive-)
@@ -78,6 +87,7 @@ if(MSVC)
 else()
     target_compile_options(app PRIVATE -Wall -Wextra -Wpedantic)
     target_compile_options(add PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(profile_app PRIVATE -Wall -Wextra -Wpedantic)
 
     if(BUILD_TESTING)
         target_compile_options(test_add PRIVATE -Wall -Wextra -Wpedantic)
@@ -87,7 +97,7 @@ endif()
 
 if(ENABLE_COVERAGE)
     enable_coverage(add)
-
+    enable_coverage(profile_app)
     if(BUILD_TESTING)
         enable_coverage(test_add)
     endif()

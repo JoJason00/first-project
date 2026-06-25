@@ -31,6 +31,19 @@
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "ENABLE_COVERAGE": "ON"
       }
+    },
+
+    {
+      "name": "profile",
+      "displayName": "Profile",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/profile",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl"
+      }
     }
   ],
   "buildPresets": [
@@ -45,6 +58,10 @@
     {
       "name": "coverage",
       "configurePreset": "coverage"
+    },
+    {
+      "name": "profile",
+      "configurePreset": "profile"
     }
   ],
   "testPresets": [
